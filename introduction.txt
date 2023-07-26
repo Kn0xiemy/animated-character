@@ -1,0 +1,5 @@
+Hi there!
+
+This is a small project about a humanoid character with animated eyes, head, and arm.
+
+The design is also responsive sub 768p, which makes it fit in smartphones.

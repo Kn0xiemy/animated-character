@@ -1,0 +1,346 @@
+/* Setting a body background color to the page */
+body {
+  background-color: rgb(94, 169, 238);
+}
+
+/*Providing dimensions to the character that is wrapping our body parts and adjusting position properties */
+.character {
+  width: 300px;
+  height: 300px;
+  display: block;
+  position: relative;
+}
+
+
+/* Head part and animation properties */
+.head {
+  height: 100px;
+  width: 100px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  z-index: 1;
+  top: 495px;
+  left: 1250px;
+  border-radius: 50px;
+  animation: rock 1s alternate infinite ease-in-out;
+}
+
+/*Keyframe properties below to activate the animation */
+@keyframes rock {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+
+/* Applied same animation properties to the hair, so that it sticks with the head motion */
+.hair {
+  height: 10px;
+  width: 75px;
+  border: 5px solid brown;
+  display:block;
+  position: absolute;
+  top: 495px;
+  left: 1265px;
+  border-radius: 50px;
+  background-color: brown;
+  z-index: 2;
+  animation: rock 1s alternate infinite ease-in-out;
+}
+
+.neck {
+  height: 25px;
+  width: 20px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  z-index: 1;
+  top: 600px;
+  left: 1290px;
+}
+
+.torso {
+  height: 150px;
+  width: 100px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  z-index: 5;
+  top: 630px;
+  left: 1250px;
+  border-radius: 25px;
+}
+
+/* Waving left hand animation properties applied to the arm */
+.arm-left {
+  height: 150px;
+  width: 23px;
+  border: 5px solid black;
+  position: absolute;
+  top: 635px;
+  left: 1225px;
+  border-radius: 40px 45px 20px 20px;
+  transform: rotate(90deg);
+  animation: wave 2s alternate infinite ease-in-out;
+  transform-origin: top;
+}
+
+/* Keyframe animation activation below */
+@keyframes wave {
+  0% {
+    transform: rotate(30deg);
+  }
+  40% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(26deg);
+  }
+}
+
+.arm-right {
+  height: 150px;
+  width: 23px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  z-index: 1;
+  border-radius: 40px 40px 20px 20px;
+  top: 630px;
+  left: 1375px;
+  transform: rotate(-20deg);
+}
+
+.leg-left {
+  height: 150px;
+  width: 23px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  z-index: 1;
+  top: 785px;
+  left: 1250px;
+  border-radius: 40px 40px 20px 20px;
+}
+
+.leg-right {
+  height: 150px;
+  width: 23px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  top: 785px;
+  left: 1315px;
+  border-radius: 40px 40px 20px 20px;
+}
+
+/*Blinking eyes that also hide the pupils upon blinking */
+.eye-left {
+  height: 20px;
+  width: 20px;
+  border: 5px solid blue;
+  display:block;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  border-radius: 25px;
+  animation: blink 2.5s infinite ease-in-out;
+  overflow: hidden;
+}
+
+/*Blinking keyframe animation */
+@keyframes blink {
+  0%, 100% {
+    height: 20%;
+  }
+  50% {
+    height: 0;
+  }
+}
+
+/*Blinking eyes that also hide the pupils upon blinking */
+.eye-right {
+  height: 20px;
+  width: 20px;
+  border: 5px solid blue;
+  display:block;
+  position: absolute;
+  top: 20px;
+  left: 55px;
+  border-radius: 25px;
+  animation: blink 2.5s infinite ease-in-out;
+  overflow: hidden;
+}
+
+.pupil-left {
+  height: 2px;
+  width: 2px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  border-radius: 25px;
+}
+
+.pupil-right {
+  height: 2px;
+  width: 2px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 25px;
+}
+
+/*Mouth opening and closing animation */
+.mouth {
+  height: 2px;
+  width: 35px;
+  border: 5px solid black;
+  display:block;
+  position: absolute;
+  top: 65px;
+  left: 25px;
+  border-radius: 50%;
+  animation: opening 2.5s infinite ease-in-out;
+}
+
+/*Keyframe animation for the mouth */
+@keyframes opening {
+  0%, 100% {
+    height: 10%;
+  }
+  50% {
+    height: 0;
+  }
+}
+
+/* Media Queries for responsiveness below*/
+@media (max-width: 768px) {
+  
+  .character {
+    width: 200px;
+    height: 200px;
+  }
+
+  .head {
+    height: 80px;
+    width: 80px;
+    top: 15px;
+    left: 150px;
+  }
+
+  .hair {
+    height: 14px;
+    width: 70px;
+    top: 15px;
+    left: 155px;
+  }
+
+  .neck {
+    height: 30px;
+    width: 25px;
+    top: 100px;
+    left: 177px;
+  }
+
+  .torso {
+    height: 100px;
+    width: 80px;
+    top: 135px;
+    left: 150px;
+  }
+
+  .arm-left {
+    height: 90px;
+    width: 25px;
+    top: 138px;
+    left: 120px;
+    transform: rotate(90deg);
+  }
+
+  @keyframes wave {
+    0% {
+      transform: rotate(10deg);
+    }
+    40% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(16deg);
+    }
+  }
+
+  .fist-left {
+    height: 23px;
+    width: 23px;
+    top: 220px;
+    left: 90px;
+  }
+
+  .fist-right {
+    height: 23px;
+    width: 23px;
+    top: 225px;
+    left: 266px;
+  }
+
+  .arm-right {
+    height: 90px;
+    width: 25px;
+    top: 135px;
+    left: 245px;
+  }
+
+  .eye-left {
+    height: 20px;
+    width: 20px;
+    top: 20px;
+    left: 8px;
+  }
+
+  .eye-right {
+    height: 20px;
+    width: 20px;
+    top: 20px;
+    left: 45px;
+  }
+
+  /* Adding mouth closing/opening animation for the responsive version*/
+  .mouth {
+    height: 3px;
+    width: 20px;
+    top: 55px;
+    left: 25px;
+    animation: opening 2s infinite alternate ease-in-out;
+  }
+
+  @keyframes opening {
+    0%, 100% {
+      height: 10%;
+    }
+    50% {
+      height: 0;
+    }
+  }
+
+  .leg-left {
+    height: 90px;
+    width: 25px;
+    top: 240px;
+    left: 155px;
+  }
+
+  .leg-right {
+    height: 90px;
+    width: 25px;
+    top: 240px;
+    left: 200px;
+  }
+}
